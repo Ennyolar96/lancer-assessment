@@ -12,33 +12,33 @@ This application serves as a clinical dashboard for a healthcare provider (e.g.,
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Client Browser                        │
+│                    Client Browser                       │
 │                                                         │
 │  ┌──────────────────────────────────────────────────┐   │
 │  │  App.jsx (Root)                                  │   │
 │  │  ┌─ QueryClientProvider (TanStack Query) ──────┐ │   │
-│  │  │                                              │ │   │
-│  │  │  Dashboard (pages/dashboard.jsx)             │ │   │
-│  │  │  ├── Header                                  │ │   │
-│  │  │  ├── Patients (sidebar / drawer)             │ │   │
-│  │  │  ├── DiagnosisHistory + DiagnosisChart       │ │   │
-│  │  │  ├── DiagnosticList                          │ │   │
-│  │  │  ├── Profile + LabResult                     │ │   │
-│  │  │  └── BottomDrawer (mobile)                   │ │   │
-│  │  │                                              │ │   │
-│  │  │  Zustand Store                               │ │   │
-│  │  │  └─ usePatientStore (selectedPatient)        │ │   │
-│  │  │                                              │ │   │
-│  │  │  TanStack Query Cache                        │ │   │
-│  │  │  └─ ["patients"] (server state)               │ │   │
-│  │  │                                              │ │   │
-│  │  └──────────────────────────────────────────────┘ │   │
-│  └──────────────────────────────────────────────────┘   │
-│                         │                                │
-│                         ▼                                │
-│              Axios HTTP Client (service/api.js)          │
-│                         │                                │
-└─────────────────────────┼────────────────────────────────┘
+│  │  │                                              │ │  │
+│  │  │  Dashboard (pages/dashboard.jsx)             │ │  │
+│  │  │  ├── Header                                  │ │  │
+│  │  │  ├── Patients (sidebar / drawer)             │ │  │
+│  │  │  ├── DiagnosisHistory + DiagnosisChart       │ │  │
+│  │  │  ├── DiagnosticList                          │ │  │
+│  │  │  ├── Profile + LabResult                     │ │  │
+│  │  │  └── BottomDrawer (mobile)                   │ │  │
+│  │  │                                              │ │  │
+│  │  │  Zustand Store                               │ │  │
+│  │  │  └─ usePatientStore (selectedPatient)        │ │  │
+│  │  │                                              │ │  │
+│  │  │  TanStack Query Cache                        │ │  │
+│  │  │  └─ ["patients"] (server state)              │ │  │
+│  │  │                                              │ │  │
+│  │  └──────────────────────────────────────────────┘ │  │
+│  └────────────────────────────────────────────────-──┘  │
+│                         │                               │
+│                         ▼                               │
+│              Axios HTTP Client (service/api.js)         │
+│                         │                               │
+└─────────────────────────┼───────────────────────────────┘
                           │
                           ▼
           Coalition Skills Test API (REST)
@@ -157,7 +157,7 @@ src/
 
 ## Live Application URL
 
-https://healthcare-react-vite.vercel.app
+https://lancer-assessment.netlify.app
 
 ## Getting Started
 
