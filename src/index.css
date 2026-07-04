@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap");
+@import "tailwindcss";
+
+/* ─── Design tokens ─────────────────────────────────────────────────────────── */
+:root {
+  /* Brand colours */
+  --unnamed-color-705aaa: #705aaa;
+  --unnamed-color-cbc8d4: #cbc8d4;
+  --activestate_bg_2: #d8fcf7;
+  --activestate_bg_1: #01f0d0;
+  --unnamed-color-0bd984: #0bd984;
+  --unnamed-color-072635: #072635;
+  --unnamed-color-0c3d5d: #0c3d5d;
+  --unnamed-color-084c77: #084c77;
+  --unnamed-color-055a92: #055a92;
+  --unnamed-color-006aac: #006aac;
+  --unnamed-color-007bc7: #007bc7;
+  --unnamed-color-707070: #707070;
+  --unnamed-color-f6f6f6: #f6f6f6;
+  --unnamed-color-ededed: #ededed;
+  --unnamed-color-000000: #000000;
+  --unnamed-color-878787: #878787;
+  --unnamed-color-ffffff: #ffffff;
+  --unnamed-color-ff6200: #ff6200;
+
+  /* Chart & vitals */
+  --chart-systolic: #e66fd2;
+  --chart-diastolic: #8c6fe6;
+  --vital-respiratory-bg: #e0f3fa;
+  --vital-temperature-bg: #ffe6e9;
+  --vital-heart-bg: #ffe6f1;
+
+  /* Typography */
+  --unnamed-font-family-manrope: Manrope, system-ui, sans-serif;
+  --unnamed-font-style-normal: normal;
+  --unnamed-font-weight-800: 800;
+  --unnamed-font-weight-normal: 400;
+  --unnamed-font-weight-bold: 700;
+  --unnamed-font-size-14: 14px;
+  --unnamed-font-size-18: 18px;
+  --unnamed-font-size-24: 24px;
+  --unnamed-character-spacing-0: 0px;
+  --unnamed-line-spacing-19: 19px;
+  --unnamed-line-spacing-24: 24px;
+  --unnamed-line-spacing-33: 33px;
+  --unnamed-text-transform-titlecase: capitalize;
+}
+
+@theme inline {
+  --font-sans: var(--unnamed-font-family-manrope);
+  --color-page: var(--unnamed-color-f6f6f6);
+  --color-card: var(--unnamed-color-ffffff);
+  --color-primary: var(--activestate_bg_1);
+  --color-primary-soft: var(--activestate_bg_2);
+  --color-heading: var(--unnamed-color-072635);
+  --color-body: var(--unnamed-color-072635);
+  --color-muted: var(--unnamed-color-707070);
+  --color-border: var(--unnamed-color-ededed);
+  --color-row-hover: var(--unnamed-color-f6f6f6);
+  --color-chart-systolic: var(--chart-systolic);
+  --color-chart-diastolic: var(--chart-diastolic);
+  --color-nav-inactive: var(--unnamed-color-072635);
+  --radius-card: 1rem;
+  --radius-pill: 9999px;
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--unnamed-font-family-manrope);
+  background-color: var(--unnamed-color-f6f6f6);
+  color: var(--unnamed-color-072635);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Typography utilities ───────────────────────────────────────────────────── */
+.card-title-24pt {
+  font-family: var(--unnamed-font-family-manrope);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-800);
+  font-size: var(--unnamed-font-size-24);
+  line-height: var(--unnamed-line-spacing-33);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+}
+
+.inner-card-title-18pt {
+  font-family: var(--unnamed-font-family-manrope);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-bold);
+  font-size: var(--unnamed-font-size-18);
+  line-height: var(--unnamed-line-spacing-24);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+  text-transform: var(--unnamed-text-transform-titlecase);
+}
+
+.body-emphasized-14pt {
+  font-family: var(--unnamed-font-family-manrope);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-bold);
+  font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-19);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+}
+
+.body-secondary-info-14pt {
+  font-family: var(--unnamed-font-family-manrope);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-normal);
+  font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-19);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-707070);
+}
+
+.body-regular-14 {
+  font-family: var(--unnamed-font-family-manrope);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-normal);
+  font-size: var(--unnamed-font-size-14);
+  line-height: var(--unnamed-line-spacing-19);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-072635);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────────── */
+.scroll-area {
+  scrollbar-width: thin;
+  scrollbar-color: var(--unnamed-color-cbc8d4) transparent;
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background-color: var(--unnamed-color-cbc8d4);
+  border-radius: 9999px;
+}
+
+/* ─── Layout helpers ─────────────────────────────────────────────────────────── */
+
+/* Page background */
+.dashboard-bg {
+  background-color: var(--unnamed-color-f6f6f6);
+}
+
+/*
+  Three-column grid:
+  - mobile  : single column, stacked
+  - tablet  : sidebar + main stacked, profile aside below
+  - desktop : three columns side-by-side
+*/
+.dashboard-grid {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Mobile: single column */
+@media (max-width: 767px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .dashboard-aside-left {
+    order: 1;
+  }
+  .dashboard-main {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .dashboard-aside-right {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Tablet (768-1023px): two columns — sidebar | (main + right stacked) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .dashboard-grid {
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .dashboard-aside-left {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    max-height: calc(100vh - 7rem);
+  }
+
+  .dashboard-main {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dashboard-aside-right {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+/* Desktop (≥1024px): three columns */
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: minmax(260px, 1fr) minmax(0, 2.2fr) minmax(
+        280px,
+        1fr
+      );
+    grid-template-rows: 1fr;
+  }
+
+  .dashboard-aside-left {
+    max-height: calc(100vh - 7rem);
+  }
+
+  .dashboard-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 0;
+  }
+
+  .dashboard-aside-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 0;
+  }
+}
+
+/* Mobile floating dashboard panel animations */
+.mobile-panel-backdrop {
+  animation: mobile-panel-backdrop-in 160ms ease-out both;
+}
+
+.mobile-panel {
+  transform-origin: top center;
+  animation: mobile-panel-in 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes mobile-panel-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mobile-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-panel-backdrop,
+  .mobile-panel {
+    animation: none;
+  }
+}
