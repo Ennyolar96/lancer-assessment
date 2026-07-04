@@ -33,7 +33,7 @@ This application serves as a clinical dashboard for a healthcare provider (e.g.,
 │  │  │  └─ ["patients"] (server state)              │ │  │
 │  │  │                                              │ │  │
 │  │  └──────────────────────────────────────────────┘ │  │
-│  └────────────────────────────────────────────────-──┘  │
+│  └──────────────────────────────────────────────────┘   │
 │                         │                               │
 │                         ▼                               │
 │              Axios HTTP Client (service/api.js)         │
